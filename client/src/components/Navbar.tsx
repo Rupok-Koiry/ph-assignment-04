@@ -48,7 +48,7 @@ const Navbar = () => {
           <Link to="/" className="flex gap-3 items-center">
             <img src="/images/logo.png" alt="logo" className="invert h-14" />
             <p className="text-blue-400 text-xl font-medium font-arya tracking-monster">
-              Camppe
+              CAMPEE
             </p>
           </Link>
           <div className="flex items-center space-x-4">
