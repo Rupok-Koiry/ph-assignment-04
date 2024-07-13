@@ -44,7 +44,7 @@ const Checkout = () => {
   return (
     <section className="border-b border-black py-10">
       <SectionTitle title="Checkout" />
-      <div className="w-2/3 mx-auto text-white bg-[#2d2e2f]  p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+      <div className="md:w-2/3 mx-auto text-white bg-[#2d2e2f]  p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="mb-6">
             <h3 className="text-2xl font-semibold mb-4">User Details</h3>
