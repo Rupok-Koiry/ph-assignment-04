@@ -42,11 +42,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-30">
+    <header className="sticky top-0 z-10">
       <nav className="bg-[#18191A] text-white navbar">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <Link to="/">
+          <Link to="/" className="flex gap-3 items-center">
             <img src="/images/logo.png" alt="logo" className="invert h-14" />
+            <p className="text-blue-400 text-xl font-medium font-arya tracking-monster">
+              Camppe
+            </p>
           </Link>
           <div className="flex items-center space-x-4">
             <div className="md:hidden" onClick={toggleMenu}>

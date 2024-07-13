@@ -183,8 +183,12 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 </label>
                 <input
                   type="number"
-                  id="price"
-                  {...register("price", { required: "Price is required" })}
+                  {...register("price", {
+                    required: "Price is required",
+                    valueAsNumber: true,
+                    validate: (value) =>
+                      !isNaN(value) || "Price must be a number",
+                  })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
                 {errors.price && (
@@ -201,7 +205,12 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 <input
                   type="number"
                   id="stock"
-                  {...register("stock", { required: "Stock is required" })}
+                  {...register("stock", {
+                    required: "Stock is required",
+                    valueAsNumber: true,
+                    validate: (value) =>
+                      !isNaN(value) || "Stock must be a number",
+                  })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
                 {errors.stock && (
@@ -262,8 +271,16 @@ const ProductModal: React.FC<ProductModalProps> = ({
                   Ratings
                 </label>
                 <input
+                  type="number"
                   id="ratings"
-                  {...register("ratings", { required: "Ratings are required" })}
+                  step="0.1"
+                  {...register("ratings", {
+                    required: "Ratings are required",
+                    valueAsNumber: true,
+                    validate: (value) =>
+                      (value >= 1 && value <= 5) ||
+                      "Ratings must be between 1 and 5",
+                  })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
                 {errors.ratings && (

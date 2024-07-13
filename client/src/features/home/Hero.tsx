@@ -8,11 +8,12 @@ const Hero = () => {
           Ultimate Destination for Camping Gear and Adventure Essentials
         </h2>
         <p className="text-gray-200 text-lg">
-          Campee offers high-quality camping gear and essentials for every
-          adventure. Shop our selection of tents, sleeping bags, cooking
-          equipment, and fun camping accessories. Experience top-notch products,
-          fast shipping, and excellent customer service. Prepare for your next
-          outdoor adventure with Campee.
+          <span className="text-blue-600 font-medium">Campee</span> offers
+          high-quality camping gear and essentials for every adventure. Shop our
+          selection of tents, sleeping bags, cooking equipment, and fun camping
+          accessories. Experience top-notch products, fast shipping, and
+          excellent customer service. Prepare for your next outdoor adventure
+          with <span className="text-blue-600 font-medium">Campee</span>.
         </p>
         <div className="mt-8">
           <Link

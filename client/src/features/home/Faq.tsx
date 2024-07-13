@@ -3,7 +3,7 @@ import SectionTitle from "../../components/SectionTitle";
 
 const Faq = () => {
   return (
-    <section className="relative z-10 md:py-10 py-16 border-b border-black">
+    <section className="relative md:py-10 py-16 border-b border-black">
       <SectionTitle
         title="Any Questions? Look Here"
         description="Explore answers to commonly asked questions about our products and services."

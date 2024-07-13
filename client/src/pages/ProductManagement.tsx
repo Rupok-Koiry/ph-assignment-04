@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { useDeleteProduct } from "../features/products/useDeleteProduct";
 import ProductModal from "../features/products/ProductModal";
 import SectionTitle from "../components/SectionTitle";
+import Spinner from "../components/Spinner";
 
 const ProductManagement = () => {
   const { isLoading, error, products } = useProducts();
@@ -41,11 +42,10 @@ const ProductManagement = () => {
     });
   };
 
-  if (isLoading)
-    return <h2 className="text-center text-2xl mt-10">Loading...</h2>;
+  if (isLoading) return <Spinner />;
   if (error)
     return (
-      <h2 className="text-center text-2xl text-red-500 mt-10">
+      <h2 className="text-center text-2xl font-bold text-red-500">
         {error.message}
       </h2>
     );
