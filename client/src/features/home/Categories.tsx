@@ -44,7 +44,7 @@ const Categories = () => {
           <SwiperSlide key={category._id}>
             <div>
               <img
-                className="size-48 object-contain mx-auto bg-[#2d2e2f]  rounded-full p-4 mb-3"
+                className="size-48 object-contain mx-auto bg-[#2d2e2f] hover:scale-95 transition duration-300  rounded-full p-4 mb-3"
                 src={category.image}
                 alt="{category.name}"
               />
