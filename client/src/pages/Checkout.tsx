@@ -43,13 +43,7 @@ const Checkout = () => {
 
   return (
     <section className="border-b border-black py-10">
-      {/* <h2 className="text-center text-4xl font-bold mb-8 ">Checkout</h2> */}
-      <SectionTitle
-        title="Checkout"
-        // description="There are many variations of passages of Lorem Ipsum available
-        //   but the majority have suffered alteration in some form."
-        // className="mt-10 text-center"
-      />
+      <SectionTitle title="Checkout" />
       <div className="w-2/3 mx-auto text-white bg-[#2d2e2f]  p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="mb-6">

@@ -12,28 +12,28 @@ const reviewData = [
   },
   {
     imgUrl: "/images/review2.png",
-    name: "John Smith",
+    name: "Emily Johnson",
     reviewText:
       "Campers Shop offers a variety of camping gear. The prices are reasonable and the quality unbeatable. I always find what I need for my adventures. Great shopping experience overall.",
     rating: 4,
   },
   {
     imgUrl: "/images/review3.png",
-    name: "Emily Johnson",
+    name: "John Smith",
     reviewText:
       "I recently bought a sleeping bag from Campers Shop, and it was super comfortable and kept me warm all night. Highly recommend their products for quality and reliability.",
     rating: 5,
   },
   {
     imgUrl: "/images/review4.png",
-    name: "Sarah Brown",
+    name: "Michael Davis",
     reviewText:
       "Amazing selection of camping gear. The staff was very helpful in guiding me to choose the right products for my needs. I'll definitely be a returning customer.",
     rating: 4.5,
   },
   {
     imgUrl: "/images/review5.png",
-    name: "Michael Davis",
+    name: "Sarah Brown",
     reviewText:
       "I love the variety of camping gear available at Campers Shop. The prices are competitive and the quality is exceptional. My go-to store for all my camping needs.",
     rating: 4,

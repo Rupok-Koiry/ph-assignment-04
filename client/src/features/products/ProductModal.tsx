@@ -36,7 +36,14 @@ const ProductModal: React.FC<ProductModalProps> = ({
   const { categories } = useCategories();
   const { editProduct } = useEditProduct();
   const { createProduct } = useCreateProduct();
-  const { register, handleSubmit, reset, control } = useForm<FormData>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    control,
+    formState: { errors },
+    clearErrors,
+  } = useForm<FormData>({
     defaultValues: {
       name: "",
       price: 0,
@@ -70,7 +77,7 @@ const ProductModal: React.FC<ProductModalProps> = ({
         stock: 0,
         description: "",
         category: "",
-        ratings: 0,
+        ratings: 5,
         images: [],
       });
       setUploadedImages([]);
@@ -78,6 +85,8 @@ const ProductModal: React.FC<ProductModalProps> = ({
   }, [product, reset]);
 
   const onSubmit = (newProduct: FormData) => {
+    clearErrors("images");
+
     newProduct.price = Number(newProduct.price);
     newProduct.stock = Number(newProduct.stock);
     newProduct.ratings = Number(newProduct.ratings);
@@ -158,9 +167,12 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 <input
                   type="text"
                   id="name"
-                  {...register("name", { required: true })}
+                  {...register("name", { required: "Name is required" })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm">{errors.name.message}</p>
+                )}
               </div>
               <div>
                 <label
@@ -172,9 +184,12 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 <input
                   type="number"
                   id="price"
-                  {...register("price", { required: true })}
+                  {...register("price", { required: "Price is required" })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
+                {errors.price && (
+                  <p className="text-red-500 text-sm">{errors.price.message}</p>
+                )}
               </div>
               <div>
                 <label
@@ -186,9 +201,12 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 <input
                   type="number"
                   id="stock"
-                  {...register("stock", { required: true })}
+                  {...register("stock", { required: "Stock is required" })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
+                {errors.stock && (
+                  <p className="text-red-500 text-sm">{errors.stock.message}</p>
+                )}
               </div>
               <div>
                 <label
@@ -199,9 +217,16 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 </label>
                 <textarea
                   id="description"
-                  {...register("description", { required: true })}
+                  {...register("description", {
+                    required: "Description is required",
+                  })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
+                {errors.description && (
+                  <p className="text-red-500 text-sm">
+                    {errors.description.message}
+                  </p>
+                )}
               </div>
               <div>
                 <label
@@ -211,7 +236,9 @@ const ProductModal: React.FC<ProductModalProps> = ({
                   Category
                 </label>
                 <select
-                  {...register("category", { required: true })}
+                  {...register("category", {
+                    required: "Category is required",
+                  })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                   defaultValue={product?.category._id}
                 >
@@ -221,6 +248,11 @@ const ProductModal: React.FC<ProductModalProps> = ({
                     </option>
                   ))}
                 </select>
+                {errors.category && (
+                  <p className="text-red-500 text-sm">
+                    {errors.category.message}
+                  </p>
+                )}
               </div>
               <div>
                 <label
@@ -231,9 +263,14 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 </label>
                 <input
                   id="ratings"
-                  {...register("ratings", { required: true })}
+                  {...register("ratings", { required: "Ratings are required" })}
                   className="focus:border-blue-600 w-full rounded-lg border-2 border-[#2c3c4c]  px-3 py-3 caret-blue-600 focus:outline-none bg-[#2D2E2F] text-white"
                 />
+                {errors.ratings && (
+                  <p className="text-red-500 text-sm">
+                    {errors.ratings.message}
+                  </p>
+                )}
               </div>
               <div>
                 <label
@@ -250,6 +287,11 @@ const ProductModal: React.FC<ProductModalProps> = ({
                 <Controller
                   name="images"
                   control={control}
+                  rules={{
+                    validate: () =>
+                      uploadedImages.length > 0 ||
+                      "At least one image is required",
+                  }}
                   render={({ field }) => (
                     <Dropzone
                       onDrop={async (acceptedFiles) => {
@@ -285,6 +327,11 @@ const ProductModal: React.FC<ProductModalProps> = ({
                     </Dropzone>
                   )}
                 />
+                {errors.images && (
+                  <p className="text-red-500 text-sm">
+                    {errors.images.message}
+                  </p>
+                )}
                 <div className="mt-2 flex flex-wrap gap-3">
                   {uploadedImages.map((url, index) => (
                     <div key={index} className="relative">

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   AiOutlineShoppingCart,
   AiOutlineMenu,
   AiOutlineClose,
 } from "react-icons/ai";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 
@@ -15,6 +15,30 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const menuVariants = {
+    hidden: { height: 0, opacity: 0 },
+    visible: {
+      height: "auto",
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+    exit: {
+      height: 0,
+      opacity: 0,
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
   };
 
   return (
@@ -34,36 +58,52 @@ const Navbar = () => {
             </div>
             <ul className="hidden md:flex items-center space-x-8">
               <li>
-                <Link
+                <NavLink
                   to="/"
-                  className="hover:text-blue-600 transition duration-300 font-medium"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 font-medium"
+                      : "hover:text-blue-600 transition duration-300 font-medium"
+                  }
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/products"
-                  className="hover:text-blue-600 transition duration-300 font-medium"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 font-medium"
+                      : "hover:text-blue-600 transition duration-300 font-medium"
+                  }
                 >
                   Products
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/product-management"
-                  className="hover:text-blue-600 transition duration-300 font-medium"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 font-medium"
+                      : "hover:text-blue-600 transition duration-300 font-medium"
+                  }
                 >
                   Product Management
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/about"
-                  className="hover:text-blue-600 transition duration-300 font-medium"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 font-medium"
+                      : "hover:text-blue-600 transition duration-300 font-medium"
+                  }
                 >
                   About Us
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <Link
@@ -77,50 +117,70 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        {isOpen && (
-          <motion.ul
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            className="md:hidden bg-black text-white space-y-4 p-4"
-          >
-            <li>
-              <Link
-                to="/"
-                onClick={toggleMenu}
-                className="hover:text-blue-600 transition duration-300 block"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/products"
-                onClick={toggleMenu}
-                className="hover:text-blue-600 transition duration-300 block"
-              >
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/product-management"
-                onClick={toggleMenu}
-                className="hover:text-blue-600 transition duration-300 block"
-              >
-                Product Management
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about-us"
-                onClick={toggleMenu}
-                className="hover:text-blue-600 transition duration-300 block"
-              >
-                About Us
-              </Link>
-            </li>
-          </motion.ul>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.ul
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={menuVariants}
+              className="md:hidden bg-[#18191A] text-white space-y-4 p-4 overflow-hidden"
+            >
+              <motion.li variants={itemVariants}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 block"
+                      : "hover:text-blue-600 transition duration-300 block"
+                  }
+                  onClick={toggleMenu}
+                >
+                  Home
+                </NavLink>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <NavLink
+                  to="/products"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 block"
+                      : "hover:text-blue-600 transition duration-300 block"
+                  }
+                  onClick={toggleMenu}
+                >
+                  Products
+                </NavLink>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <NavLink
+                  to="/product-management"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 block"
+                      : "hover:text-blue-600 transition duration-300 block"
+                  }
+                  onClick={toggleMenu}
+                >
+                  Product Management
+                </NavLink>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-600 transition duration-300 block"
+                      : "hover:text-blue-600 transition duration-300 block"
+                  }
+                  onClick={toggleMenu}
+                >
+                  About Us
+                </NavLink>
+              </motion.li>
+            </motion.ul>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );

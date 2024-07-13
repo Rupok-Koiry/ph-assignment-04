@@ -4,7 +4,6 @@ import Spinner from "../../components/Spinner";
 import { useCategories } from "../categories/useCategories";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ICategory } from "../../services/apiCategories";
-import { Link } from "react-router-dom";
 
 const Categories = () => {
   const { isLoading, error, categories } = useCategories();
@@ -44,13 +43,11 @@ const Categories = () => {
         {categories.map((category: ICategory) => (
           <SwiperSlide key={category._id}>
             <div>
-              <Link to={`/products?category=${category._id}`}>
-                <img
-                  className="size-48 object-contain mx-auto bg-[#2d2e2f]  rounded-full p-4 mb-3"
-                  src={category.image}
-                  alt="{category.name}"
-                />
-              </Link>
+              <img
+                className="size-48 object-contain mx-auto bg-[#2d2e2f]  rounded-full p-4 mb-3"
+                src={category.image}
+                alt="{category.name}"
+              />
               <p className="text-white text-center text-xl"> {category.name}</p>
             </div>
           </SwiperSlide>

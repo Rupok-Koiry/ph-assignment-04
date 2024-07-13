@@ -56,7 +56,6 @@ export async function createProduct(newProduct: INewProduct) {
     const product = response.data.data;
     return product;
   } catch (error) {
-    console.error(error);
     throw new Error("Failed to create product");
   }
 }
