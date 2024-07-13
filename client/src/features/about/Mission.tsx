@@ -8,7 +8,7 @@ const Mission = () => {
           Our Mission
         </h3>{" "}
         <p className="text-gray-200 ">
-          At Campers Shop, our mission is to inspire and equip camping
+          At Campee Shop, our mission is to inspire and equip camping
           enthusiasts with high-quality gear and innovative products. We are
           dedicated to enhancing the camping experience by offering a diverse
           selection of necessary and fun items that promote exploration,

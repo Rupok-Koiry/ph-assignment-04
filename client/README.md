@@ -1,12 +1,12 @@
-# [Campers Shop](https://ph-assignment-04-client.vercel.app/)
+# [Campee Shop](https://ph-assignment-04-client.vercel.app/)
 
 ## Introduction
 
-Welcome to Campers Shop, your one-stop e-commerce website for all camping enthusiasts!
+Welcome to Campee Shop, your one-stop e-commerce website for all camping enthusiasts!
 
 ## Project Description
 
-Campers Shop is designed to provide camping enthusiasts with a wide range of products necessary for their adventures. The website aims to offer a user-friendly and visually appealing shopping experience, inspired by popular sites like Adventure Shop, Camping Shop, and The Camperco Shop.
+Campee Shop is designed to provide camping enthusiasts with a wide range of products necessary for their adventures. The website aims to offer a user-friendly and visually appealing shopping experience, inspired by popular sites like Adventure Shop, Camping Shop, and The Camperco Shop.
 
 ## Features
 
@@ -87,11 +87,11 @@ Campers Shop is designed to provide camping enthusiasts with a wide range of pro
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/campers-shop.git
+   git clone https://github.com/yourusername/Campee-shop.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd campers-shop
+   cd Campee-shop
    ```
 3. Install client dependencies:
    ```bash

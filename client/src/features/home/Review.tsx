@@ -7,21 +7,21 @@ const reviewData = [
     imgUrl: "/images/review1.png",
     name: "Kate Winslett",
     reviewText:
-      "I found the perfect tent for my family camping trip at Campers Shop. The quality is great, and the shipping was fast. Our camping experience was enhanced by this purchase.",
+      "I found the perfect tent for my family camping trip at Campee Shop. The quality is great, and the shipping was fast. Our camping experience was enhanced by this purchase.",
     rating: 5,
   },
   {
     imgUrl: "/images/review2.png",
     name: "Emily Johnson",
     reviewText:
-      "Campers Shop offers a variety of camping gear. The prices are reasonable and the quality unbeatable. I always find what I need for my adventures. Great shopping experience overall.",
+      "Campee Shop offers a variety of camping gear. The prices are reasonable and the quality unbeatable. I always find what I need for my adventures. Great shopping experience overall.",
     rating: 4,
   },
   {
     imgUrl: "/images/review3.png",
     name: "John Smith",
     reviewText:
-      "I recently bought a sleeping bag from Campers Shop, and it was super comfortable and kept me warm all night. Highly recommend their products for quality and reliability.",
+      "I recently bought a sleeping bag from Campee Shop, and it was super comfortable and kept me warm all night. Highly recommend their products for quality and reliability.",
     rating: 5,
   },
   {
@@ -35,28 +35,28 @@ const reviewData = [
     imgUrl: "/images/review5.png",
     name: "Sarah Brown",
     reviewText:
-      "I love the variety of camping gear available at Campers Shop. The prices are competitive and the quality is exceptional. My go-to store for all my camping needs.",
+      "I love the variety of camping gear available at Campee Shop. The prices are competitive and the quality is exceptional. My go-to store for all my camping needs.",
     rating: 4,
   },
   {
     imgUrl: "/images/review6.png",
     name: "Jessica Green",
     reviewText:
-      "Campers Shop exceeded my expectations with their fast delivery and high-quality products. I'll definitely be back for more. Great experience overall!",
+      "Campee Shop exceeded my expectations with their fast delivery and high-quality products. I'll definitely be back for more. Great experience overall!",
     rating: 5,
   },
   {
     imgUrl: "/images/review7.png",
     name: "Chris Martin",
     reviewText:
-      "Fantastic store with a great range of camping equipment. The website is easy to navigate and the checkout process was smooth. Highly recommend Campers Shop!",
+      "Fantastic store with a great range of camping equipment. The website is easy to navigate and the checkout process was smooth. Highly recommend Campee Shop!",
     rating: 4.5,
   },
   {
     imgUrl: "/images/review8.png",
     name: "Laura Wilson",
     reviewText:
-      "I'm extremely satisfied with my purchase from Campers Shop. The products are durable and the customer service is friendly and helpful. Will definitely shop here again!",
+      "I'm extremely satisfied with my purchase from Campee Shop. The products are durable and the customer service is friendly and helpful. Will definitely shop here again!",
     rating: 5,
   },
 ];
