@@ -13,6 +13,9 @@ const Footer = () => {
               <h3 className="text-blue-400 text-4xl font-medium font-arya tracking-monster">
                 CAMPEE
               </h3>
+              <p className="text-gray-400 text-sm mt-1">
+                Grafton Street, Dublin
+              </p>
             </div>
           </div>
 
