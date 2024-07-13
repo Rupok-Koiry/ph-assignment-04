@@ -9,11 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           <div className="col-span-full lg:col-span-1 flex justify-center lg:justify-start">
             <div className="text-center lg:text-left">
-              <img
-                src="../../public/images/logo.png"
-                alt="logo"
-                className="invert"
-              />
+              <img src="/images/logo.png" alt="logo" className="invert" />
               <h3 className="text-blue-400 text-4xl font-medium font-arya tracking-monster">
                 CAMPEE
               </h3>
