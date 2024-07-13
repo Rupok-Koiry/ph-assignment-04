@@ -18,6 +18,9 @@ app.use(cors());
 
 // Route handlers for API endpoints prefixed with /api/v1
 app.use('/api', router);
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
 // Middleware for handling global errors
 app.use(globalErrorHandler);

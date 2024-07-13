@@ -18,15 +18,13 @@ const AppError_1 = __importDefault(require("../errors/AppError"));
 const apiFeatures_1 = __importDefault(require("./apiFeatures"));
 const http_status_1 = __importDefault(require("http-status"));
 const deleteOne = (Model) => (0, catchAsync_1.default)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const doc = yield Model.findByIdAndUpdate(req.params.id, { isDeleted: true }, { new: true });
+    const doc = yield Model.findByIdAndDelete(req.params.id);
     if (!doc) {
-        return next(new AppError_1.default(http_status_1.default.NOT_FOUND, `${Model.modelName} not found`));
+        return next(new AppError_1.default(404, 'No document found with that ID'));
     }
-    res.status(http_status_1.default.OK).json({
-        success: true,
-        statusCode: http_status_1.default.OK,
-        message: `${Model.modelName} Deleted successfully`,
-        data: doc,
+    res.status(204).json({
+        status: 'success',
+        data: null,
     });
 }));
 exports.deleteOne = deleteOne;
