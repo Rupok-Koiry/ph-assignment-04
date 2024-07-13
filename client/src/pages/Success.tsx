@@ -4,7 +4,7 @@ const Success = () => {
   return (
     <section className="border-b border-black py-10 md:w-2/3 mx-auto">
       <div
-        className="md:w-2/3 mx-auto bg-blue-100 border border-blue-400 text-blue-500 px-4 rounded-lg text-center py-8 "
+        className="bg-blue-100 border border-blue-400 text-blue-500 px-4 rounded-lg text-center py-8 "
         role="alert"
       >
         <strong className="font-semibold text-2xl md:text-3xl">
